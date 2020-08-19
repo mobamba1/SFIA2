@@ -1,16 +1,27 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from os import getenv
 import random, string
-
+import requests
 
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/home')
 def home():
+  final = requests.get('http://35.246.3.155:5000/service4')
+
   
-  return render_template('home.html', title='Home' )
+  return render_template('home.html', output=final.text, title='Home' )
+
+
+@app.route('/home/update', methods=['GET','POST'])
+def update():
+  data = requests.get('http://35.246.3.155:5000/service2')
+  data1 = requests.get('http://35.246.3.155:5000/service3')
+  final = data.text + data1.text
+  return Response(final, mimetype='text/plain') 
+
 
 @app.route('/service2', methods=['GET'])
 def service2():
@@ -27,8 +38,8 @@ def service3():
 
 @app.route('/service4', methods=['GET','POST'])
 def service4():
-  data = 'A2'
-  if data == 'A2':
+  data = requests.get('http://35.246.3.155:5000/home/update')
+  if data.text == 'A2' or data.text == 'A1' or data.text == 'A3' or data.text == 'A4' or data.text == 'A5' or data.text == 'A6' or data.text == 'A7' or data.text == 'A8':
     output = "Hit"
   else:
     output = "Miss"
