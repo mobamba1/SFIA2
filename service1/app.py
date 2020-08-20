@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def home():
-  final = requests.get('http://35.246.3.155:5000/service4')
+  final = requests.get('http://35.246.3.155:5004/service4')
 
   
   return render_template('home.html', output=final.text, title='Home' )
@@ -17,8 +17,8 @@ def home():
 
 @app.route('/home/update', methods=['GET','POST'])
 def update():
-  data = requests.get('http://35.246.3.155:5000/service2')
-  data1 = requests.get('http://35.246.3.155:5000/service3')
+  data = requests.get('http://35.246.3.155:5002/service2')
+  data1 = requests.get('http://35.246.3.155:5003/service3')
   final = data.text + data1.text
   return Response(final, mimetype='text/plain') 
 
