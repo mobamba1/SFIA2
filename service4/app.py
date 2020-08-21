@@ -13,6 +13,7 @@ def service4():
     output = "Hit"
   else:
     output = "Miss"
+  
   return Response(output,mimetype='text/plain')
 
 if __name__=='__main__':
