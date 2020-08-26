@@ -10,8 +10,17 @@
 	<p>When ready press the fire button!</p>
 	<form action="{{ url_for('home') }}">
         <button type="submit">FIRE</button>
+        </form>
 	<h1>{{output}}</h1>
-    
+	<h1>{{maybe}}</h1>
+        {%for post in posts%}<!--for loop to print every post in posts -->
+	<div>
+		<h3>Coordinates: {{post.coordinates}}</h3>
+	</div>
+        {%endfor%}
+        <form action="{{url_for('delete')}}">
+        <button type="submit">Delete All Data</button>
+        </form>
 </body>
 </html>
 

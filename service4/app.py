@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 @app.route('/service4', methods=['GET','POST'])
 def service4():
-  data = requests.get('http://35.246.3.155:5000/home/update')
-  if data.text == 'A2' or data.text == 'A1' or data.text == 'A3' or data.text == 'A4' or data.text == 'A5' or data.text == 'A6' or data.text == 'A7' or data.text == 'A8':
+  data1 = requests.get('http://34.105.244.35:5000/home/update')
+  if data1.text == 'A2' or data1.text == 'A1' or data1.text == 'A3' or data1.text == 'A4' or data1.text == 'A5' or data1.text == 'A6' or data1.text == 'A7' or data1.text == 'A8':
     output = "Hit"
   else:
     output = "Miss"

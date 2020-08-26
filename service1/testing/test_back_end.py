@@ -5,10 +5,16 @@ from unittest.mock import patch
 from flask import url_for
 from flask_testing import TestCase
 from service1.app import app
+from os import getenv
 
 class TestBase(TestCase):
-  def create_app(self):
-    return app
+    def create_app(self):
+        app.config.update(SQLACHEMY_DATABASE_URI=getenv('DATABASE_URI'),
+                SECRET_KEY=getenv('SKEY'),
+                WTF_CSRF_ENABLED=False,
+                DEBUG=True
+                )
+        return app
 
 class TestViews(TestBase):
   def test_home(self):
@@ -18,3 +24,7 @@ class TestViews(TestBase):
   def test_update(self):
     response = self.client.get(url_for('update'))
     self.assertEquals(response.status_code,200)
+
+  def test_delete(self):
+    response = self.client.get(url_for('delete'))
+    self.assertEquals(response.status_code,302)

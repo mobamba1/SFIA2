@@ -8,6 +8,6 @@ class TestBase(TestCase):
   def create_app(self):
     return app
 class TestViews(TestBase):
-  def test_home(self):
+  def test_service2(self):
     response = self.client.get(url_for('service2'))
     self.assertEquals(response.status_code,200)
