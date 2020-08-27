@@ -1,0 +1,58 @@
+- hosts: all
+  become: true
+  tasks: 
+  - name: Install Requirements for Docker
+    apt:
+      pkg: 
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+      state: latest
+      update_cache: true
+
+  - name: Add official GPG key
+    apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+
+
+  - name: Add apt repository
+    apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_lsb.codename|lower }} stable
+
+  - name: Install Docker
+    apt:
+      pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      state: latest
+      update_cache: true
+
+- hosts: manager
+  become: true
+  tasks:
+  - name: Leave Swarm
+    docker_swarm:
+      state: absent
+      force: true
+
+  - name: Initialise Docker Swarm
+    docker_swarm:
+      state: present
+
+  - name: Inspect Swarm 
+    docker_swarm:
+      state: inspect
+    register: token
+
+  - name: Inspect Swarm Nodes
+    docker_swarm_info:
+      nodes: yes
+
+  - name: Export Variable
+    add_host:
+      name: " joining "
+      value: "{{ token }}"
