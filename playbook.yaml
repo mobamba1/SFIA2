@@ -31,6 +31,50 @@
       state: latest
       update_cache: true
 
+  - name: Install Python2
+    apt:
+      name: python
+      state: present
+      update_cache: true
+ 
+  - name: Install Python3
+    apt:
+      name: python3
+      state: latest
+      update_cache: true
+
+  - name: Install Pip
+    apt:
+      name: python-pip
+      state: present
+      update_cache: true
+
+  - name: Install Pip3
+    apt:
+      name: python3-pip
+      state: latest
+      update_cache: true
+
+  - name: Install setuptools
+    pip:
+      name: setuptools
+      executable: pip3
+      state: latest
+     
+
+
+  - name: Install Docker SDK
+    pip:
+      name: docker
+      state: latest
+
+  - name: Leave Swarm
+    docker_swarm:
+      state: absent
+      force: true
+    
+
+
 - hosts: manager
   become: true
   tasks:
@@ -54,5 +98,38 @@
 
   - name: Export Variable
     add_host:
-      name: " joining "
-      value: "{{ token }}"
+      name: "joining"
+      value: "{{ token.swarm_facts.JoinTokens.Worker }}"
+
+
+
+- hosts: worker
+  become: true
+  tasks:
+  - name: Leave Swarm
+    docker_swarm:
+      state: absent
+      force: true
+
+  - name: Please Leave Swarm
+    docker_swarm:
+      state: absent
+      force: true
+
+  - name: Join Worker 1
+    docker_swarm:
+      state: join
+      advertise_addr: 34.105.191.234  
+      join_token: "{{ hostvars['joining']['value'] }}"
+      remote_addrs: [ "34.105.244.35:2377" ] 
+
+
+  - name: Join Worker 2
+    docker_swarm:
+      state: join
+      advertise_addr: 35.197.247.28
+      join_token: "{{ hostvars['joining']['value'] }}"
+      remote_addrs: [ "34.105.244.35:2377" ]
+
+
+
