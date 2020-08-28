@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   service1:
-    image: 127.0.0.1:4999/service1
+    image: kenneth1521412/service1
     build: ./service1
     ports:
       - target: 5000
@@ -10,21 +10,21 @@ services:
     environment:
       DATABASE_URI: ${DATABASE_URI}
   service2:
-    image: 127.0.0.1:4999/service2
+    image: kenneth1521412/service2
     build: ./service2
     ports:
       - target: 5002
         published: 5002
         protocol: tcp
   service3:
-    image: 127.0.0.1:4999/service3
+    image: kenneth1521412/service3
     build: ./service3
     ports:
       - target: 5003
         published: 5003
         protocol: tcp
   service4:
-    image: 127.0.0.1:4999/service4
+    image: kenneth1521412/service4
     build: ./service4
     ports:
       - target: 5004
