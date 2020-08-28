@@ -25,7 +25,7 @@ class Output(db.Model):
 @app.route('/home')
 def home():
   
-  data = requests.get('http://app4:5004/service4')
+  data = requests.get('http://service4:5004/service4')
   postData=Output.query.all() 
   
   
@@ -34,8 +34,8 @@ def home():
 
 @app.route('/home/update', methods=['GET','POST'])
 def update():
-  data = requests.get('http://app2:5002/service2')
-  data1 = requests.get('http://app3:5003/service3')
+  data = requests.get('http://service2:5002/service2')
+  data1 = requests.get('http://service3:5003/service3')
   final = data.text + data1.text
   coordinate1 = Output(coordinates=final)
   db.session.add(coordinate1)

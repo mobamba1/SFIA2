@@ -37,8 +37,12 @@ services:
   nginx:
     container_name: nginx
     image: nginx
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
     volumes:
     - type: bind
-      source: /home/kenneth1521412/SFIA2/nginx/nginx.conf
+      source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
    
