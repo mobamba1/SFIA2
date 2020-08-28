@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/service4', methods=['GET','POST'])
 def service4():
-  data1 = requests.get('http://34.89.28.103:5000/home/update')
+  data1 = requests.get('http://app1:5000/home/update')
   if data1.text == 'A2' or data1.text == 'A1' or data1.text == 'A3' or data1.text == 'A4' or data1.text == 'A5' or data1.text == 'A6' or data1.text == 'A7' or data1.text == 'A8':
     output = "Hit"
   else:
