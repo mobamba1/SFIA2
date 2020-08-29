@@ -17,6 +17,11 @@ pipeline {
                 sh "bash ./scripts/test.sh"
             }
         }
+        stage("Swarm"){
+            steps {
+                sh "bash ./scripts/swarm.sh"
+            }
+        }
     }
 
 }
