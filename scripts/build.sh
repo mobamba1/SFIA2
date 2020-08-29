@@ -18,7 +18,7 @@ ls
 #source ~/.bashrc
 
 ssh kenneth1521412@sfia2
-
+cd SFIA2
 export DATABASE_URI='mysql+pymysql://root:root@34.105.217.36:3306/coordinate'
 export SECRET_KEY=sdfkjf
 export SKEY=alkdfnsuf
