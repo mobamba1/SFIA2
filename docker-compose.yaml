@@ -53,4 +53,6 @@ services:
     - type: bind
       source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
+    deploy:
+      replicas: 3
     
