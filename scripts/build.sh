@@ -8,7 +8,7 @@ ls
 #deactivate 
 #docker-compose down
 
-#docker --version
+docker --version
 #docker-compose --version
 
 #ansible --version
@@ -27,6 +27,6 @@ ls
 #sudo docker system prune -f
 
 #sudo docker images
-sudo docker login -u"$USER" -p"$PASS" 
-
+docker login -u"$USER" -p"$PASS"
+docker push kenneth1521412/service4
 
