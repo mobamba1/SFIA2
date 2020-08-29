@@ -13,7 +13,7 @@ docker rmi $(docker images -a -q)
 #Docker --version
 #docker-compose --version
 
-#ansible --version
+ansible --version
 
 
 
