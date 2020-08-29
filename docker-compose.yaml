@@ -11,7 +11,6 @@ services:
     environment:
       DATABASE_URI: ${DATABASE_URI}
     deploy:
-      mode: replicated
       replicas: 3
   service2:
     container_name: app2
@@ -22,7 +21,6 @@ services:
         published: 5002
         protocol: tcp
     deploy:
-      mode: replicated
       replicas: 3
   service3:
     container_name: app3
@@ -33,7 +31,6 @@ services:
         published: 5003
         protocol: tcp
     deploy:
-      mode: replicated
       replicas: 3
   service4:
     container_name: app4
@@ -44,8 +41,7 @@ services:
         published: 5004
         protocol: tcp
     deploy:
-      mode: replicated
-      replicas: 3
+      replicas: 3 
   nginx:
     container_name: nginx
     image: nginx
@@ -57,6 +53,4 @@ services:
     - type: bind
       source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
-    deploy:
-      mode: replicated
-      replicas: 3
+    

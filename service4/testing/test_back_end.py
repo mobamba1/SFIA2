@@ -9,9 +9,11 @@ class TestBase(TestCase):
     return app
 class TestViews(TestBase):
   def test_home(self):
-    response = self.client.get(url_for('service4'))
-    self.assertEquals(response.status_code,200)
-
+     with patch('requests.get') as g:
+       g.return_value.text = "A1"
+       response = self.client.get(url_for('service4'))
+       self.assertEquals(response.status_code,200)
+       
 
   def test_hit(self):
      with patch('requests.get') as g:
