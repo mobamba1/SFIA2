@@ -4,11 +4,19 @@ pwd
 ls
 
 deactivate 
-sudo docker-compose down
+docker-compose down
 
 docker --version
 docker-compose --version
 
-/home/jenkins/.local/bin/ansible --version
+ansible --version
 
-sudo docker images
+docker login
+
+docker images
+docker ps
+
+ansible-playbook -i inventory.cfg playbook.yaml
+
+docker-compose build
+docker-compose push
