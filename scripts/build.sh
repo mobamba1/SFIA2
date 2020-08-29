@@ -3,6 +3,8 @@
 pwd
 ls
 
+docker rmi $(docker images -a -q)
+
 deactivate 
 docker-compose down
 
@@ -11,7 +13,7 @@ docker-compose --version
 
 ansible --version
 
-docker login
+sudo docker login
 
 
 docker images
@@ -20,4 +22,4 @@ docker ps
 ansible-playbook -i inventory.cfg playbook.yaml
 
 docker-compose build
-docker-compose push
+sudo docker-compose push
