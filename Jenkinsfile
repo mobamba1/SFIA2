@@ -8,13 +8,13 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-               # sh "bash ./scripts/build.sh"
+                sh "bash ./scripts/swarm.sh"
                 
             }
         }
         stage("Test"){
             steps {
-                #sh "bash ./scripts/test.sh"
+                sh "bash ./scripts/test.sh"
             }
         }
         stage("Swarm"){
