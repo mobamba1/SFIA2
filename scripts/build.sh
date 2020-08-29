@@ -27,8 +27,9 @@ docker --version
 #sudo docker system prune -f
 
 #sudo docker images
-chmod 777 /home/jenkins/.docker/config.json792267277
+
 docker login -u"$USER" -p"$PASS" 
 docker images
+whoami
 
 
