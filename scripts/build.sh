@@ -27,7 +27,7 @@ docker --version
 #sudo docker system prune -f
 
 #sudo docker images
-docker login 
+docker login -u"$USER" -p"$PASS" 
 docker images
 
 
