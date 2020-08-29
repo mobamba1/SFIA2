@@ -20,6 +20,8 @@ docker rmi $(docker images -a -q)
 ansible-playbook -i inventory.cfg playbook.yaml
 
 docker-compose build
+docker-compose up -d
+
 
 #sudo docker-compose build
 #sudo docker images
