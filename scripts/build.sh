@@ -29,23 +29,15 @@ docker-compose down
 docker rmi $(docker images -a -q)
 
 
-
-mkdir -p ~/.local/bin
-echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
-source ~/.bashrc
-
-pip install --user ansible
-
-
 ansible --version
 
 
 
 #docker images
 #docker ps
-/home/kenneth1521412/.local/bin/ansible --version
+ansible --version
 
-/home/kenneth1521412/.local/bin/ansible-playbook -i inventory.cfg playbook.yaml
+ansible-playbook -i inventory.cfg playbook.yaml
 
 docker-compose build
 docker-compose up -d
