@@ -13,6 +13,7 @@ ansible --version
 
 docker login
 
+
 docker images
 docker ps
 
