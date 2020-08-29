@@ -6,5 +6,5 @@ ls
 pip3 install -r requirements.txt
 
 cd service1
-ls
+python3 -m pytest --cov service1
 cd ..
