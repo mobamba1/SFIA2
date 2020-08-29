@@ -28,6 +28,15 @@ deactivate
 docker-compose down
 docker rmi $(docker images -a -q)
 
+
+
+mkdir -p ~/.local/bin
+echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
+source ~/.bashrc
+
+pip install --user ansible
+
+
 ansible --version
 
 
