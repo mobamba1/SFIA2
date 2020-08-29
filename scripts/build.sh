@@ -3,10 +3,10 @@
 pwd
 ls
 
-docker rmi $(docker images -a -q)
+#docker rmi $(docker images -a -q)
 
 deactivate 
-#docker-compose down
+docker-compose down
 
 docker --version
 docker-compose --version
@@ -28,6 +28,7 @@ sudo docker system prune -f
 
 sudo docker images
 sudo docker login
-docker-compose push
 kenneth1521412
 Mamama00)
+docker-compose push
+
