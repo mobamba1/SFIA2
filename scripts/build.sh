@@ -29,5 +29,5 @@ docker --version
 #sudo docker images
 docker login -u"$USER" -p"$PASS"
 docker images
-docker push kenneth1521412/service4
+
 
