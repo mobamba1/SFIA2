@@ -6,14 +6,13 @@ ls
 docker rmi $(docker images -a -q)
 
 deactivate 
-docker-compose down
+#docker-compose down
 
 docker --version
 docker-compose --version
 
 ansible --version
 
-sudo docker login
 
 
 docker images
@@ -29,4 +28,6 @@ sudo docker system prune -f
 
 sudo docker images
 sudo docker login
-sudo docker-compose push
+docker-compose push
+kenneth1521412
+Mamama00)
