@@ -35,9 +35,9 @@ ansible --version
 
 #docker images
 #docker ps
-ansible --version
+/home/jenkins/.local/bin/ansible --version
 
-ansible-playbook -i inventory.cfg playbook.yaml
+/home/jenkins/.local/bin/ansible-playbook -i inventory.cfg playbook.yaml
 
 docker-compose build
 docker-compose up -d
