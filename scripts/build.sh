@@ -13,6 +13,12 @@ docker rmi $(docker images -a -q)
 #Docker --version
 #docker-compose --version
 
+mkdir -p ~/.local/bin
+echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
+source ~/.bashrc
+
+pip install --user ansible
+
 ansible --version
 
 
