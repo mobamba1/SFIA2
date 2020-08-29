@@ -3,21 +3,28 @@
 pwd
 ls
 
-export DATABASE_URI='mysql+pymysql://root:root@34.105.217.36:3306/coordinate'
-export SECRET_KEY=sdfkjf
-export SKEY=alkdfnsuf
+#export DATABASE_URI='mysql+pymysql://root:root@34.105.217.36:3306/coordinate'
+#export SECRET_KEY=sdfkjf
+#export SKEY=alkdfnsuf
 
-deactivate 
-docker-compose down
-docker rmi $(docker images -a -q)
+#deactivate 
+#docker-compose down
+#docker rmi $(docker images -a -q)
 #Docker --version
 #docker-compose --version
 
-mkdir -p ~/.local/bin
-echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
-source ~/.bashrc
+#mkdir -p ~/.local/bin
+#echo 'PATH=$PATH:~/.local/bin' >> ~/.bashrc
+#source ~/.bashrc
 
-pip install --user ansible
+ssh kenneth1521412@sfia2
+
+export DATABASE_URI='mysql+pymysql://root:root@34.105.217.36:3306/coordinate'
+export SECRET_KEY=sdfkjf
+export SKEY=alkdfnsuf
+deactivate
+docker-compose down
+docker rmi $(docker images -a -q)
 
 ansible --version
 /home/jenkins/.local/bin/ansible --version
