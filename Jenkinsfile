@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh "bash ./scripts/swarm.sh"
+                sh "bash ./scripts/build.sh"
                 
             }
         }
