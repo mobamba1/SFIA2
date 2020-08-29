@@ -27,8 +27,7 @@ docker-compose down
 docker rmi $(docker images -a -q)
 
 ansible --version
-/home/jenkins/.local/bin/ansible --version
-/home/jenkins/.local/bin/ansible-playbook -i inventory.cfg playbook.yaml
+
 
 
 #docker images
