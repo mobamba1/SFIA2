@@ -31,5 +31,6 @@ docker --version
 docker login -u"$USER" -p"$PASS" 
 docker images
 whoami
+docker-compose push
 
 
