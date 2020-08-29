@@ -28,5 +28,5 @@ sudo docker system prune -f
 
 sudo docker images
 sudo docker login -u"$USER" -p"$PASS" 
-docker-compose push
+docker push kenneth1521412/service1:latest
 
