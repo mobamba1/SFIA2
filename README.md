@@ -54,7 +54,7 @@ ER Diagram was also updated as suggested by my superior, as show in the first im
 
 CI Pipeline: 
 This is the refactored pipeline which includes the docker and ansible into the diagram. Docker is used to compose the containers for both test environment and live environment. However the test enviornment will use the IP address of the jenkins node, while the live will use the manager and workers so that there not no conflicts with the enviornments. Ansible will only be used to configure the nodes of the necessary packages so that they can initiate docker swarm and and stack. 
-![cipipeiline2](SFIA%202/cipipelineRefactored.PNG)
+![cipipeiline2](SFIA%202/cipipelineRefectored.PNG)
 
 
 # Home Page
