@@ -75,6 +75,7 @@ During the second phases of the project (Deployment) I had to consider what coul
 
 # Coverage (Unit Test) and Integration
 As part of the MVP we only needed to include the Unit test of the project and ensure that we are achieving 90% or more. In the images bellow it shows that I had achieved higher than required and included the mock test. 
+Most of the test were written for both service 1 and 4 for they handle most of the application functionalities, while service 2 and 3 only generate a random letter or number.
 Service 1: 
 The service was tested if it loads, and mock test was used when grabbing the generated text from servive 2 and 3. 
 ![Test1](SFIA%202/service1.PNG)
@@ -89,7 +90,7 @@ Unit test was used check if it was accessible through the port, and mock test wa
 ![Test4](SFIA%202/service4.PNG)
 
 ## Refactored 
-I had included selinium to do the integration testing. This will simulate how a user would use the application. Which tested both add and delete button.
+I had included selinium to do the integration testing. This will simulate how a user would use the application. Which tested both add and delete button. Because of this we were able to identify if the crub functions that I had implemented were working as intended which can be seen in the logs. (create, read and delete)
 ![Test5](SFIA%202/integration.PNG)
 
 # Deployment
@@ -114,9 +115,22 @@ The jenkinsfile is to initiate the number of builds the system will have. In my 
 ![Jenkinsfile](SFIA%202/jenkinsfile.PNG)
 ![Scripts](SFIA%202/jenkinsscripts.PNG)
 
-# Refactored 
+## Refactored 
 I changed the creadentials in my scrips so tha they are hiding from anyone that may want to clone my repository. This is to protect my VM's IP address and they credentials for my database.
 ![AnsibleI](SFIA%202/ansible.PNG)
+
+# Deployment Log
+If you would like to read the Deployment log it can be found the in link bellow. This section will discuss the 3 scripts that were written to create the deployment logs.
+Build Script:
+In this section it was important to deactivate any environments that may be running to ensure that we start off from fresh. Also another thing that was removed as any images that were build from the previous deployment so that there are no conflicts. ansible is there excuted to setup the packages for the manager and worker nodes which will be useful later on SWARM stage. I also needed to ensure that new images are built and pushed to the docker hub, which is a registry that will store my images which will then be pulled later on the SWARM build. Before pushing it was important we stored all the credentians in jenkins so that it can be used in the scripts without them being hard coded.
+
+Test Script:
+Here I had to set up the environment but installing all the requirements using the requirements.txt which holds all necessary packages needed to run the application and test correctly. Also in each build I had to include the credentials for the database such as the URI and secret key so that they can access the database, without this the application wouldn't work. I then had to go into each service's folder to run the test written for them so that they can be separated. The images above shows the results of those test which they recieved 91% or higher for each service. The test script also executes the integration testing which test the crub functionality that included in the application. (create, read and delete) 
+
+SWARM Script:
+In this section we needed to ssh into the manager node so that we can control it with shell commands. Because of the first stage we were able to install all the required packages to execute docker commands. The manager node will then pull all the images that were pushed to docker hub. Also we clone the git repository from github (SFIA2) to make sure we have the latest docker-compose file which will be used to execute my stack service. When the stack is then deployed, all we have to do now is check if the service is running as intended.
+
+https://github.com/mobamba1/SFIA2/blob/master/SFIA%202/buildtext.txt
 
 
 ## Known Issues and Future improvements
