@@ -72,6 +72,7 @@ I started off with identifying what could happen during the development of the a
 ## Refactored 
 During the second phases of the project (Deployment) I had to consider what could go wrong during this process. Most of the issues led to the configurations files of the project. 
 ![Risk2](SFIA%202/RiskARefactored.PNG)
+Link to Risk Assessment:https://docs.google.com/document/d/1oGzjYT81CFEZFWN7bKzq7_SW-8O5ANwZyCEEXLfLC4I/edit
 
 # Coverage (Unit Test) and Integration
 As part of the MVP we only needed to include the Unit test of the project and ensure that we are achieving 90% or more. In the images bellow it shows that I had achieved higher than required and included the mock test. 
