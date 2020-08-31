@@ -15,7 +15,7 @@ The project will have 4 servicces running; Service 1; where all my python and ht
 I had used chosen to use Jira to ensure that all my steps are recorded before attempting to create the application. I first started as shown in the image with 1 epic which is to create the application. However as shown later I have started to incorporate other epics to take into account how the system will need to be deployed for it is still part of the development of the project. 
 
 add image under here 
-![Jira](images/Jira.PNG)
+![Jira](SFIA2/jira.PNG)
 
 ## Refactored
 Compared to the first image there are more child task under the tasks in epics, this is due to the underestimation of the project. Each use cases (tasks under epics) were broken down further to help understand what task needs to be completed and also help track my progress on development. 
