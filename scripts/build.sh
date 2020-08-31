@@ -21,9 +21,9 @@ ssh kenneth1521412@sfia2
 pwd
 ls
 cd SFIA2
-export DATABASE
-export SECRETKEY
-export SKEY
+export DATABASE_URI="$DATABASE"
+export SECRET_KEY="$SECRETKEY"
+export SKEY="$SKEY"
 deactivate
 docker-compose down
 docker rmi $(docker images -a -q)
