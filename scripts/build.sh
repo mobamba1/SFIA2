@@ -21,9 +21,9 @@ ssh kenneth1521412@sfia2
 pwd
 ls
 cd SFIA2
-export DATABASE_URI='mysql+pymysql://root:root@34.105.217.36:3306/coordinate'
-export SECRET_KEY=sdfkjf
-export SKEY=alkdfnsuf
+export DATABASE
+export SECRETKEY
+export SKEY
 deactivate
 docker-compose down
 docker rmi $(docker images -a -q)

@@ -4,6 +4,9 @@ pipeline {
 
     USER = credentials('USER')
     PASS = credentials('PASS')
+    DATABASE = credetials('DATABASE')
+    SECRETEKEY = credetials('SECRETKEY')
+    SKEY = credetials('SKEY')
     }
     stages {
         stage("Build") {
