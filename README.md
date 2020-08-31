@@ -17,7 +17,7 @@ I had used chosen to use Jira to ensure that all my steps are recorded before at
 add image under here 
 ![Jira](images/Jira.PNG)
 
-# Refactored
+## Refactored
 Compared to the first image there are more child task under the tasks in epics, this is due to the underestimation of the project. Each use cases (tasks under epics) were broken down further to help understand what task needs to be completed and also help track my progress on development. 
 
 ![Jira](images/Jira.PNG)
@@ -26,7 +26,7 @@ Compared to the first image there are more child task under the tasks in epics, 
 The final board can be seen in this link:
 https://rowanowa.atlassian.net/jira/software/projects/SFIA2/boards/5
 
-## Designs:
+# Designs:
 Initial Project design (Flowchart) - The image below describes how the application will communicate with each other via python HTTP request. This is a rough sketch of what it looks like for I only needed to it as a reference point:
 ![Jira](images/Jira.PNG)
 
@@ -36,7 +36,7 @@ CI Pipeline:
 The pipeline that i currently used was the same one for the firt SFIA project. This is due to the fact that the new techonology we were going to learnt wont be completed until a few before the deadline. This will be refactored later on.
 ![Jira](images/Jira.PNG)
 
-# Refactored 
+## Refactored 
 As we go along the academy my understanding of the python http request increases which enables me to implement this new knowledge into the diagram I had show above. Bellow if the update version to provide a better understanding of how the application system will flow. 
 ![Jira](images/Jira.PNG)
 
@@ -61,23 +61,23 @@ This is the refactored pipeline which includes the docker and ansible into the d
 ![Jira](images/Jira.PNG)
 
 
-## Home Page
+# Home Page
 The web application only has page which is shown in the image bellow. The page only has one button to generate the random coordinates for the user. This will then display if the user was able to hit the opponent or not.
 ![Jira](images/Jira.PNG)
 
-# Refactored 
+## Refactored 
 As mentioned from in my design I had changed the output to also show the coordinates and added these coordinates to the database so that they are recorded. Also a delete button was included to prevent the page from being over crowded.
 ![Jira](images/Jira.PNG)
 
-## Risk Assesssment
+# Risk Assesssment
 I started off with identifying what could happen during the development of the application to ensure that funcstions as intended without any errors.
 ![Jira](images/Jira.PNG)
 
-# Refactored 
+## Refactored 
 During the second phases of the project (Deployment) I had to consider what could go wrong during this process. Most of the issues led to the configurations files of the project. 
 ![Jira](images/Jira.PNG)
 
-## Coverage (Unit Test) and Integration
+# Coverage (Unit Test) and Integration
 As part of the MVP we only needed to include the Unit test of the project and ensure that we are achieving 90% or more. In the images bellow it shows that I had achieved higher than required and included the mock test. 
 Service 1: 
 The service was tested if it loads, and mock test was used when grabbing the generated text from servive 2 and 3. 
@@ -91,11 +91,11 @@ Service 4:
 Unit test was used check if it was accessible through the port, and mock test was used to check what output will be generated (hit or miss).
 ![Jira](images/Jira.PNG)
 
-# Refactored 
+## Refactored 
 I had included selinium to do the integration testing. This will simulate how a user would use the application. Which tested both add and delete button.
 ![Jira](images/Jira.PNG)
 
-## Deployment
+# Deployment
 Docker:
 Dockerfiles was used to create a costume image for each service to be deployed as a container so that they can be deloyed all at the same time using docker compose.
 ![Jira](images/Jira.PNG)
