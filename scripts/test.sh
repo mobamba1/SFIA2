@@ -1,9 +1,9 @@
 #! /bin/bash
 
 
-export DATABASE_URI='mysql+pymysql://root:root@34.105.217.36:3306/coordinate'
-export SECRET_KEY=sdfkjf
-export SKEY=alkdfnsuf
+export DATABASE_URI="$DATABASE"
+export SECRET_KEY="$SECRETKEY"
+export SKEY="$SKEY"
 
 pip3 install -r requirements.txt
 

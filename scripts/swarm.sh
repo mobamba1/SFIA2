@@ -2,9 +2,9 @@
 
 ssh kenneth1521412@manager<< EOF
 
-export DATABASE_URI='mysql+pymysql://root:root@34.105.217.36:3306/coordinate'
-export SECRET_KEY=sdfkjf
-export SKEY=alkdfnsuf
+export DATABASE_URI="$DATABASE"
+export SECRET_KEY="$SECRETKEY"
+export SKEY="$SKEY"
 
 docker stack rm SFIA2
 docker rmi $(docker images -a -q)
