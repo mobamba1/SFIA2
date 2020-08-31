@@ -105,14 +105,14 @@ The yaml file was used to deploy all containers at the same time including nginx
 ![Jira](images/Jira.PNG)
 
 Ansible inventory:
-This file is used to set the groups and varibles for the nodes. This will be used to identify which IP addresses belong to what group. 
-![Jira](images/Jira.PNG)
+This file is used to set the groups and varibles for the nodes. This will be used to identify which IP addresses belong to what group. Image of the code will not be shown here for it will expose the IP address. This will be refactored later.
+
 
 Ansible playbooks:
 This yaml file is used to configure what groups set on on the invoronment files, this is to install all the necessary modules and packages for the worker and manager nodes so that they function as intended.
 ![Jira](images/Jira.PNG)
 
-Jankinsfile and scripts:
+Jenkinsfile and scripts:
 The jenkinsfile is to initiate the number of builds the system will have. In my project there will only be 3 builds, 1 to build the system for the necessarry modules and step up for docker files to, 2 test setting up the test ennvironment so that all my test will past and initiate, and 3 deploy which is where all my shell commands for my manager node will be when the swarm as already been initiated and needs to deploy all the containers to be spread to the manager and worker nodes.
 ![Jira](images/Jira.PNG)
 
