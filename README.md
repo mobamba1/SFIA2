@@ -64,7 +64,7 @@ The web application only has page which is shown in the image bellow. The page o
 ## Refactored 
 As mentioned from in my design I had changed the output to also show the coordinates and added these coordinates to the database so that they are recorded. Also a delete button was included to prevent the page from being over crowded.
 ![Build](SFIA%202/home.PNG)
-Nginx was also implemneted to identify if the application would work without using the port number of ther service 1. This is to redirect the user to the right destination and make sure they are unable to access other services besides what I want them to see(service1).
+Nginx was also implemented to identify if the application would work without using the port number of ther service 1. This is to redirect the user to the right destination and make sure they are unable to access other services besides what I want them to see(service1). NGINX was containerised as a costume image.
 ![NGINX](SFIA%202/nginx.PNG)
 
 # Risk Assesssment
